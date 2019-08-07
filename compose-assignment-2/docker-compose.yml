@@ -1,1 +1,26 @@
-# create your drupal and postgres config here, based off the last assignment
+version: '2'
+
+services:
+  web:
+    image: custom-drupal
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ca1-web-modules:/var/www/html/modules
+      - ca1-web-profiles:/var/www/html/profiles
+      - ca1-web-sites:/var/www/html/sites
+      - ca1-web-themes:/var/www/html/themes      
+  db:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=pass
+    # volumes:
+    #   - ca1-db:/var/lib/postgresql/data
+
+volumes:
+  # ca1-db:
+  ca1-web-modules:
+  ca1-web-profiles:
+  ca1-web-sites:
+  ca1-web-themes:
