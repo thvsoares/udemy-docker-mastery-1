@@ -15,11 +15,11 @@ services:
     image: postgres:9.6
     environment:
       - POSTGRES_PASSWORD=pass
-    # volumes:
-    #   - ca1-db:/var/lib/postgresql/data
+    volumes:
+      - drupal-data:/var/lib/postgresql/data
 
 volumes:
-  # ca1-db:
+  drupal-data:
   ca1-web-modules:
   ca1-web-profiles:
   ca1-web-sites:
