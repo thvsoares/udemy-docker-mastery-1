@@ -11,6 +11,7 @@ services:
       - drupal-profiles:/var/www/html/profiles
       - drupal-sites:/var/www/html/sites
       - drupal-themes:/var/www/html/themes      
+  
   db:
     image: postgres:9.6
     environment:
