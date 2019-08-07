@@ -7,10 +7,10 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ca1-web-modules:/var/www/html/modules
-      - ca1-web-profiles:/var/www/html/profiles
-      - ca1-web-sites:/var/www/html/sites
-      - ca1-web-themes:/var/www/html/themes      
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-sites:/var/www/html/sites
+      - drupal-themes:/var/www/html/themes      
   db:
     image: postgres:9.6
     environment:
@@ -19,8 +19,8 @@ services:
       - drupal-data:/var/lib/postgresql/data
 
 volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
   drupal-data:
-  ca1-web-modules:
-  ca1-web-profiles:
-  ca1-web-sites:
-  ca1-web-themes:
