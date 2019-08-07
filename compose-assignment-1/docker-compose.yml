@@ -1,5 +1,5 @@
 version: '2'
-
+''
 services:
   web:
     image: drupal
@@ -15,8 +15,6 @@ services:
       - POSTGRES_PASSWORD=P45$W0rd
     volumes:
       - ca1-db:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
 
 volumes:
   ca1-db:
