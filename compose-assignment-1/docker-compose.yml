@@ -16,11 +16,8 @@ services:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=pass
-    # volumes:
-    #   - ca1-db:/var/lib/postgresql/data
 
 volumes:
-  # ca1-db:
   ca1-web-modules:
   ca1-web-profiles:
   ca1-web-sites:
