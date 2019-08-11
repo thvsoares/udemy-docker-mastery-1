@@ -1,3 +1,6 @@
-docker run --rm -d -v ${pwd}\registry-data:/var/lib/registry -p :5000:5000 --name registry registry
-docker run --rm -it 127.0.0.1:5000/hello-world
-docker container kill registry
+docker run -d -p 5000:5000 --name registry `
+  --restart unless-stopped `
+  -v ${pwd}/registry-data:/var/lib/registry -v ${pwd}/certs:/certs `
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt `
+  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key `
+  registry
